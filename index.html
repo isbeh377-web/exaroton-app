@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> </title> <!-- título en blanco -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <script>
+        // Función de redirección inmediata
+        function redirigir() {
+            window.location.href = "https://www.aternos.org";
+        }
+
+        // Registrar service worker sin logs
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+
+        // Redirigir automáticamente al cargar
+        window.addEventListener('load', () => {
+            redirigir();
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
